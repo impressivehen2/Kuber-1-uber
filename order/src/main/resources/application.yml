@@ -1,0 +1,3 @@
+server:
+# ${PORT:2222} property placeholder, PORT should be determined by environment variable, if not set falls back to default 3333
+  port: ${PORT:2222}

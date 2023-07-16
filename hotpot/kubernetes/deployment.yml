@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotpot-service
+  labels:
+    app: hotpot-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hotpot-service
+  template:
+    metadata:
+      labels:
+        app: hotpot-service
+    spec:
+      containers:
+        - name: hotpot-service
+          image: shhu/hotpot-service
+          ports:
+            - containerPort: 3333
