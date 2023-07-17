@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: uber-ingress
+spec:
+  rules:
+    - host: uber.net
+      http:
+        paths:
+          - path: /hotpot
+            pathType: Prefix
+            backend:
+              service:
+                name: hotpot-service # Should match Kub Service
+                port:
+                  number: 3333
+          - path: /order
+            pathType: Prefix
+            backend:
+              service:
+                name: order-service # Should match Kub Service
+                port:
+                  number: 2222
