@@ -6,6 +6,12 @@ https://piotrminkowski.wordpress.com/2017/03/31/microservices-with-kubernetes-an
 #### Minikube
 https://sensu.io/blog/minikube-tutorial
 
+# Summary
+Java 17, SpringBoot 3.1.1
+order-service calls hotpot-service with Kubernetes Service endpoint using FeignClient
+Deploy local Kubernetes cluster with Minikube, expose pods with Deployment, Service yml
+!!! Still not able to call Ingress on MacOs
+
 ## Steps
 #### 1. Build jar
 ```
@@ -82,6 +88,8 @@ spec.template.metadata.labels: Invalid value: map[string]string{"app":"hotpot-se
 #### Unable to access NodePort MacOS Minikube -> Step 3
 https://github.com/kubernetes/minikube/issues/11193
 
+#### Unable to test Ingress MacOS
+https://github.com/kubernetes/minikube/issues/13510
 
 #### Kubernetes Debug
 ```
