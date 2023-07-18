@@ -7,9 +7,9 @@ https://piotrminkowski.wordpress.com/2017/03/31/microservices-with-kubernetes-an
 https://sensu.io/blog/minikube-tutorial
 
 # Summary
-Java 17, SpringBoot 3.1.1
-order-service calls hotpot-service with Kubernetes Service endpoint using FeignClient
-Deploy local Kubernetes cluster with Minikube, expose pods with Deployment, Service yml
+Java 17, SpringBoot 3.1.1 <br>
+order-service calls hotpot-service with Kubernetes Service endpoint using FeignClient <br>
+Deploy local Kubernetes cluster with Minikube, expose pods with Deployment, Service yml <br>
 !!! Still not able to call Ingress on MacOs
 
 ## Steps
