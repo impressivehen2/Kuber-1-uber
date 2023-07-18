@@ -53,27 +53,31 @@ HOMEBREW=$(which brew) && sudo ${HOMEBREW} services stop socket_vmnet
 
 # Start Minikube with Qemu driver and socket_vmnet
 minikube start --driver qemu --network socket_vmnet
+
+# To test LoadBalancer Service locally on MacOS
+minikube addons enable ingress
+minikube tunnel
 ```
 
 #### 2. Kubernetes 
 ```
-# Apply Kub Deployment
+#Apply Kub Deployment
 kubectl apply -f hotpot/kubernetes/deployment.yml
 kubectl apply -f order/kubernetes/deployment.yml
 
-# Apply Kub Service
+#Apply Kub Service
 kubectl apply -f hotpot/kubernetes/service.yml
 kubectl apply -f order/kubernetes/service.yml
 
-# Get Service NodePort url
+#Get Service NodePort url
 minikube service hotpot-service --url  # http://192.168.105.2:30033/hotpot/menu
 minikube service order-service --url # http://192.168.105.2:30022/order/price/Spicy Beef
 
-# For testing only forward service endpoint to localhost
+#For testing only forward service endpoint to localhost
 kubectl port-forward service/hotpot-service 3333:3333 # http://localhost:3333/hotpot/menu
 kubectl port-forward service/order-service 2222:2222 http://localhost:2222/order/price/Spicy Beef 
 
-# Apply Kub Ingress
+#Apply Kub Ingress
 kubectl apply -f kubernetes/ingress.yml
 ```
 
