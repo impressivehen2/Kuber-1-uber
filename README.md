@@ -75,7 +75,7 @@ minikube service order-service --url # http://192.168.105.2:30022/order/price/Sp
 
 #For testing only forward service endpoint to localhost
 kubectl port-forward service/hotpot-service 3333:3333 # http://localhost:3333/hotpot/menu
-kubectl port-forward service/order-service 2222:2222 http://localhost:2222/order/price/Spicy Beef 
+kubectl port-forward service/order-service 2222:2222 # http://localhost:2222/order/price/Spicy Beef 
 
 #Apply Kub Ingress
 kubectl apply -f kubernetes/ingress.yml
